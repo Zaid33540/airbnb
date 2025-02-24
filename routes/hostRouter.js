@@ -11,7 +11,7 @@ const rootDir = require("../utils/pathUtil");
 const hostRouter = express.Router();
 
 hostRouter.get("/add-home", (req, res, next) => {
-  res.render("addHome", {
+  res.render("addhome", {
     pageTitle: "airbnb Add Home",
     currentPage: "addhome",
   });
