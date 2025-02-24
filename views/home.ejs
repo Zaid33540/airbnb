@@ -1,0 +1,56 @@
+<%- include('partials/head') %>
+  </head>
+
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Header starts here -->
+    <%- include('partials/nav') %>
+
+
+
+      <main class="max-w-7xl mx-auto min-h-screen flex flex-col items-center px-4 py-12">
+        <!-- Title -->
+        <h1 class="text-4xl font-bold mt-10 mb-8 text-gray-900">
+          Here are our registered homes:
+        </h1>
+
+        <!-- Home List Container -->
+        <ul class="w-full max-w-3xl flex flex-col gap-6">
+          <% homes.forEach(home=> { %>
+            <li class="bg-white shadow-lg p-6 rounded-lg border border-gray-200 flex items-center gap-4">
+              <!-- Hotel Image -->
+              <img src="<%= home.image %>" alt="Hotel Image"
+                class="w-24 h-24 object-cover rounded-md border border-gray-300">
+
+              <!-- Hotel Details -->
+              <div class="flex flex-col">
+                <h2 class="text-2xl font-semibold text-red-500">
+                  <%= home.homeName %>
+                </h2>
+                <p class="text-gray-700 text-sm">
+                  <%= home.location %>
+                </p>
+                <p class="text-gray-900 font-semibold text-lg">
+                  ₹<%= home.price %> / night
+                </p>
+
+                <!-- Rating -->
+                <div class="flex items-center space-x-1 mt-2 text-yellow-500">
+                  <% for (let i=0; i < home.rating; i++) { %>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.26 5.82 22l1.18-7.86-5-4.87 6.91-1.01z" />
+                    </svg>
+                    <% } %>
+                </div>
+              </div>
+            </li>
+            <% }) %>
+        </ul>
+      </main>
+
+
+
+
+
+  </body>
+
+  </html>

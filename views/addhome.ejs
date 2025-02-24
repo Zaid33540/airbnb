@@ -1,0 +1,25 @@
+<%- include('partials/head') %> <!-- This is how we use partials in EJS similar as we used components in React.JS -->
+  </head>
+
+  <body>
+    <%- include('partials/nav') %>
+      <main>
+        <form action="/host/add-home" method="POST" class="flex flex-col items-center justify-center gap-4">
+          <h1 class="text-3xl font-bold text-center">Register your home here</h1>
+          <br>
+          <input type="text" name="homeName" placeholder="Home Name"
+            class="border border-gray-300 rounded-md p-1  w-64" />
+          <input type="number" name="price" placeholder="Price Per Night"
+            class="border border-gray-300 rounded-md p-1 w-64" />
+          <input type="text" name="location" placeholder="Location"
+            class="border border-gray-300 rounded-md p-1 w-64" />
+          <input type="number" name="rating" placeholder="Rating" class="border border-gray-300 rounded-md p-1 w-64"
+            min="0" max="5" step="1" />
+          <input type="text" name="image" placeholder="Enter Image URL"
+            class="border border-gray-300 rounded-md p-1 w-64" />
+          <input type="submit" value="Submit" class="bg-red-500 rounded-md p-1 hover:bg-red-100 transition w-64" />
+        </form>
+      </main>
+  </body>
+
+  </html>
