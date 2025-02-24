@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     .render("404", { pageTitle: "Page Not Found ", currentPage: "404" });
 }); //If we will keep this middleware at the top then it will be called for every request and it will not allow the request to reach the next middleware.
 
-process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
